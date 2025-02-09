@@ -1,0 +1,52 @@
+.bgheader{
+    background-color: #00008b;
+    height: 100px;
+    color: #fff;
+}
+
+.bgheader a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.logoHeader{
+    font-size: 50px;
+}
+
+.bars{
+    width :20px;
+    height: 20px;
+    fill: #fff;
+}
+.menuButton{
+    width: 25px;
+    height: 27px;
+    background-color: inherit;
+    border: none;
+}
+.MobileMenu{
+    height: 100px;
+    
+}
+
+.menuBody a{
+    color: #000;
+    height: 50px;
+    display: block;
+}
+
+.cartLogo {
+    fill: #fff;
+    height: 20px;
+    width: 20px;
+}
+
+.counternumber{
+    top: 15px;
+    width: 22px;
+    height: 22px;
+    background-color: #e60101;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 20px;
+}

@@ -1,0 +1,39 @@
+.product{
+    border: 3px solid #0000ff;
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+}
+
+
+.details{
+    background-color: #0000ff;
+    border-radius: 10px;
+    color: #fff;
+    padding: 0 10px;
+    display: inline-block;
+    margin-right: 10px;
+    
+}
+
+.removeIcon{
+    border: none;
+    color: #0000ff;
+    font-size: 20px;
+    background-color: inherit;
+    margin-right: 10px;
+}
+
+.success{
+    margin-left: 0 !important;
+}
+
+.number{
+    background-color: #c70404;
+    border-radius: 50%;
+    color: #fff;
+    display: inline-block;
+    margin-right: 10px;
+    width: 25px;
+    text-align: center;
+}

@@ -1,0 +1,14 @@
+.backfooter{
+    background-color: darkblue;
+    height: 100px;
+    color: #fff;
+}
+
+.backfooter a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.mainfooter{
+    height: 100px;
+}
