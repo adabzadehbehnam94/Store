@@ -7,7 +7,7 @@ import styles from "../page.module.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashAlt,faSquareMinus,faSquarePlus } from '@fortawesome/free-regular-svg-icons';
 import Redusersdata from './Context';
-import { isinCart , quantity , shortTitle} from '../functions/isproduct';
+import { isinCart , quantity , shortTitle ,showQuantity} from '../functions/isproduct';
 
 
 const Products = (props) => {
@@ -18,7 +18,7 @@ const Products = (props) => {
     
     return (
         
-            <div className="col-6  col-lg-4 col-xl-3" key={id}>
+            <div className="col-12 col-sm-6  col-lg-4 col-xl-3" key={id}>
                 <div className={styles.boxProduct}>
                     <Image src={image} alt="photo product" width={200} height={200}/>
                     <Link href={`/${id}`}>{shortTitle(title)}</Link>
@@ -37,7 +37,7 @@ const Products = (props) => {
                                         <button><FontAwesomeIcon onClick={()=> dispatch({type : "DECREASE" , payload : props.data})} icon={faSquareMinus}/></button>
                                     }
                                     
-                                    {/* <span className={styles.buynumber}>{showQuantity(state,id)}</span> */}
+                                    <span className={styles.buynumber}>{showQuantity(state,id)}</span>
 
                                     <button type="button" >
                                         <FontAwesomeIcon onClick={()=> dispatch({type : "INCREASE" , payload : props.data})} icon={faSquarePlus}/>

@@ -10,10 +10,10 @@ const quantity = (state , id)=>{
    return counter
 }
 
-// const showQuantity = (state , id)=>{
-//    const data = state.selectedItems.find((item)=> item.id === id)
-//    return data.cuantity
-// }
+const showQuantity = (state , id)=>{
+   const data = state.selectedItems.find((item)=> item.id === id)
+   return data.cuantity
+}
 
 // const totalItems = (state)=>{
 //    const data = state.selectedItems.map((item)=> state.counteritems.push())
@@ -27,4 +27,4 @@ const shortTitle = (title)=>{
 }
 
 
-export {isinCart, quantity , shortTitle}
+export {isinCart, quantity , shortTitle ,showQuantity}
