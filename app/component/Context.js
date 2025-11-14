@@ -104,20 +104,20 @@ export const Context =({children})=>{
     const [user , setuser] = useState(null)
     const handleUser = (user)=> setuser(user)
     const logoutUser = ()=> setuser(null)
-    useEffect(()=>{
-        const getData = async ()=>{
-            const data = await me()
-            if(data?.user){
-                setuser(data?.user)
-                console.log(data?.user);
+    // useEffect(()=>{
+    //     const getData = async ()=>{
+    //         const data = await me()
+    //         if(data?.user){
+    //             setuser(data?.user)
+    //             console.log(data?.user);
                 
-            }else{
-                setuser(null)
-            }
+    //         }else{
+    //             setuser(null)
+    //         }
             
-        }
-        getData()
-    },[])
+    //     }
+    //     getData()
+    // },[])
     
     return(
         <Redusersdata.Provider value={{state , dispatch ,user , handleUser ,logoutUser}}>

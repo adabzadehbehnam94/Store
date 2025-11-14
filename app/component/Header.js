@@ -25,7 +25,7 @@ export default function Header(){
                     </div>
                     
                         <div className="col-lg-4  col-sm-5 row  align-items-center justify-content-end text-end">
-                            {user ? 
+                            {/* {user ? 
                                 <>
                                     <div className="col-3">
                                         <p >{user.name}</p>
@@ -50,7 +50,7 @@ export default function Header(){
                                 </>
                                
                             }
-                            
+                             */}
                            
                         <div className="col-3 position-relative">
                             <Link href={"/shopingCart"}>
@@ -90,10 +90,10 @@ export default function Header(){
                         <h5 className="offcanvas-title" id="offcanvasExampleLabel">Store</h5>
                         <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
-                    <div className={`offcanvas-body ${style.menuBody}`}>
+                    {/* <div className={`offcanvas-body ${style.menuBody}`}>
                         <Link href={"/login"}>login</Link>
                         <Link href={"/register"}>register</Link>
-                    </div>
+                    </div> */}
                     </div>
         </div>
     )
