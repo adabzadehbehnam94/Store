@@ -1,6 +1,6 @@
 این پروژه یک سایت فروشگاهی می باشد 
 این پروژه در سایت vercel آپلود شده است .
-https://store-seven-taupe.vercel.app/
+https://store-delta-neon.vercel.app/
 
 برای اجرای پروژه به صورت لوکال از کد npm run dev استفاده کنید .
 برای ایجاد پوشه node madule از کد npm install استفاده کنید .
