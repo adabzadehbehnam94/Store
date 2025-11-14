@@ -11,7 +11,7 @@ export default async function Home() {
     <div className="container">
         <div className="row mt-4">
             {
-              products.map((item)=>(
+              products?.map((item)=>(
                   <Products key={item.id}  data={item}/>
               ))
             }

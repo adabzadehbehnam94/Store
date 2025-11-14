@@ -60,8 +60,6 @@ export default  function ShopingCart(){
                             
                             <button className="btn btn-danger mx-2" onClick={()=> dispatch({type : "CANCELL" })}>Cancell</button>
 
-                            {/* <Link href={"/"}>Back to Store</Link> */}
-
                             <button className="btn btn-primary mx-2" onClick={()=> handleRoute()}>back to Store</button>
                         </>
                         
