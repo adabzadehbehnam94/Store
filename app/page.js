@@ -12,7 +12,7 @@ export default async function Home() {
         <div className="row mt-4">
             {
               products.map((item)=>(
-                  <Products key={item.id}  data ={item}/>
+                  <Products key={item.id}  data={item}/>
               ))
             }
         </div>
