@@ -13,14 +13,14 @@ import { isinCart , quantity , shortTitle ,showQuantity} from '../functions/ispr
 const Products = (props) => {
     const {state , dispatch} = useContext(Redusersdata)
 
-    const {id,image,title,price} = props.data
+    const {id,images,title,price} = props.data
     
     
     return (
         
             <div className="col-12 col-sm-6  col-lg-4 col-xl-3" key={id}>
                 <div className={styles.boxProduct}>
-                    <Image src={image} alt="photo product" width={200} height={200}/>
+                    <Image src={images[0]} alt="photo product" width={200} height={200}/>
                     <Link href={`/${id}`}>{shortTitle(title)}</Link>
                     <div className="row justify-content-between align-items-center">
                         <div className="col-md-5 col-12">

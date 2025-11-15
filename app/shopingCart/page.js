@@ -30,7 +30,7 @@ export default  function ShopingCart(){
                 <div className="col-12  col-lg-7 pr-2 order-end order-lg-first mt-3 mt-lg-0">
                     {data.map((item)=>(
                         <div className={style.product} key={item.id}>
-                            <Image className="mb-2" src = {item.image} alt="imageProduct" width={200} height={200}/>
+                            <Image className="mb-2" src = {item.images[0]} alt="imageProduct" width={200} height={200}/>
                             <p>{item.title}</p>
                             <p>{item.description}</p>
                             <p className={style.details}>{item.category}</p>
