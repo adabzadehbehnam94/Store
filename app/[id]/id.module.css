@@ -1,9 +1,9 @@
 .rate{
-    background-color: #0d0de3;
-    border-radius: 10px;
     display: inline-block;
     padding: 10px;
-    color: #fff;
+    color: #000;
+    font-size: 30px;
+    font-weight: 500;
 }
 
 .rate svg{
@@ -11,3 +11,86 @@
     height: 20px;
     color: yellow;
 }
+
+.buynumber {
+  display: inline-block;
+  margin-left: 10px;
+  color: #000;
+  background-color: #132df4;
+  border-radius: 3px;
+  text-align: center !important;
+  padding: 5px 5px;
+  font-size: 21px;
+  line-height: 11px;
+}
+
+.productTitle{
+  font-size: 50px;
+}
+
+.description{
+  margin-top: 10px;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.imageProduct{
+  background-color: #f5f6f5;
+  border-radius: 20px;
+}
+
+
+.count{
+  display: block; 
+  width: 102px;
+  height: 53px;
+  border : 2px solid #d9d9d8;
+  border-radius: 5px;
+  color: #000;
+  padding: 0 20px;
+  margin-bottom: 28px;
+}
+
+.addCart{
+    width: 386px;
+    height: 99px;
+    background-color: #d43a00;
+    border-radius: 20px;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 35px;
+    text-shadow: 1px 1px 2px #000;
+    margin-bottom: 80px;
+}
+
+.relatedProducts {
+  text-decoration: none;
+  color: #000;
+
+}
+
+.relatedProducts img{
+  background-color: #f7f7f5;
+  border-radius: 20px;
+  margin-bottom: 33px;
+}
+
+.relatedProducts h3{
+  font-weight: bold
+}
+
+.relatedProducts p{
+  font-size: 25px;
+  font-weight: 500
+}
+
+/* responsive */
+
+@media (min-width: 344px) and (max-width: 500px) { 
+  .imageProduct{
+    width: 100%;
+    height: auto;
+  }
+
+ }

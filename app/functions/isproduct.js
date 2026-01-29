@@ -15,10 +15,6 @@ const showQuantity = (state , id)=>{
    return data.cuantity
 }
 
-// const totalItems = (state)=>{
-//    const data = state.selectedItems.map((item)=> state.counteritems.push())
-//    return data
-// }
 
 const shortTitle = (title)=>{
    const short = title.split(" ")
