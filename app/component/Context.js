@@ -46,15 +46,16 @@ const reduser = (state , action)=>{
                 ...sumItems(state.selectedItems)
             }
 
-        case "INCREASE" :
-            const hasProduct = state.selectedItems.findIndex((item)=> item.id === action.payload.id)
-            state.selectedItems[hasProduct].cuantity++
-            // console.log(hasProduct);
+        case "CHANGE_QUANTITY" :
+            const findProduct = state.selectedItems.findIndex((item)=> item.id === action.payload.id)
+            state.selectedItems[findProduct].cuantity = action.payload.quantity
             
             
             return{
                 ...state,
+                selectedItems : [...state.selectedItems],
                 ...sumItems(state.selectedItems)
+                
             }
 
         case "DECREASE" :

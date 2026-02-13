@@ -6,9 +6,7 @@ import styles from "../page.module.css"
 import { shortTitle } from '../functions/isproduct';
 import Redusersdata from "../component/Context"
 import { useContext } from "react"
-import { isinCart ,quantity, showQuantity  } from "../functions/isproduct"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrashAlt, faSquareMinus, faSquarePlus } from '@fortawesome/free-regular-svg-icons';
+
 
 
 const Products = (props) => {
@@ -16,7 +14,6 @@ const Products = (props) => {
 
     const { id, images, title, price } = props.data
 
-    console.log(props.data);
     
 
     const { state, dispatch } = useContext(Redusersdata)

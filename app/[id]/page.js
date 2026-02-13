@@ -19,7 +19,8 @@ export default function Product() {
 
     const [product, setPrpduct] = useState(null)
     const [products, setPrpducts] = useState(null)
-    const [count, setcount] = useState(null)
+    const [count, setcount] = useState([])
+    const [selectedItem, setselectedItem] = useState(1)
 
     const params = useParams()
     const id = params.id
@@ -34,20 +35,9 @@ export default function Product() {
             setPrpduct(result)
             const allProducts = await fetchdata()
             setPrpducts(allProducts)
+
         }
         fetchDataItem()
-
-        const countInput = () => {
-            let countArr = []
-            for (let i = 1; i <= product?.stock; i++) {
-                countArr.push(i)
-            }
-
-            setcount([...countArr])
-
-        }
-
-        countInput()
 
     }, [])
 
@@ -59,6 +49,22 @@ export default function Product() {
 
 
     const { state, dispatch } = useContext(Redusersdata)
+
+    useEffect(() => {
+        
+            const countInput = () => {
+                let countArr = []
+                for (let i = 1; i <= product?.stock; i++) {
+                    countArr.push(i)
+                }
+
+                setcount([...countArr])
+
+            }
+
+            countInput()
+        
+    }, [product?.stock])
 
     return (
         <>
@@ -75,23 +81,23 @@ export default function Product() {
                             <h1 className={style.productTitle}>{product?.title}</h1>
                             <p className={style.rate}>{product?.price} $</p>
                             <p className={style.description}>{product?.description}</p>
-                            {/* <p className={style.rate}>{product?.rating.rate} <FontAwesomeIcon icon={faStar} /></p> */}
+                            {/* <p className={style.rate}>{product?.rating} <FontAwesomeIcon icon={faStar} /></p> */}
                             <br />
                             <h4 className="mb-4">Quantity</h4>
 
-                            {/* fix this error */}
-                            <select className={style.count}  onChange={(item) => setcount(Number(item.target.value))}>
-                                {/* {
-                                    count && 
+                            
+                            <select className={style.count} defaultValue={selectedItem} onChange={(e)=> setselectedItem(Number(e.target.value))}>
+                                {
+                                    
                                     count.map(item => (
-                                            <option value={item} key={item}>{item}</option>
-                                        ))
-                                } */}
+                                        <option value={item} key={item}>{item}</option>
+                                    ))
+                
+                                }
 
-                                <option value="1" key="1" >1</option>
                             </select>
 
-                            <button className={style.addCart} onClick={() => dispatch({ type: "ADD_ITEM", payload: { ...product, cuantity: 2 } })}>Add to Cart</button>
+                            <button className={style.addCart} onClick={() => dispatch({ type: "ADD_ITEM", payload: { ...product, cuantity: selectedItem } })}>Add to Cart</button>
 
 
                         </div>
