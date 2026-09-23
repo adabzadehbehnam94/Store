@@ -5,6 +5,7 @@ import Products from "./component/Products";
 import { fetchdata } from "./functions/dataApi";
 import { SearchContext } from "./component/Header";
 import Redusersdata from "./component/Context";
+import styles from "@/app/page.module.css"
 
 
 
@@ -30,23 +31,28 @@ export default function Home() {
   })
   return (
     <div className="container">
+      <div className={styles.HomePageTitle}>
+        <h1>Shop the Latest</h1>
+        <h3>Trendy New Arrivals</h3>
+        <button className={styles.buttonShop}>Shop Now</button>
+      </div>
       <div className="row mt-4">
         {
           SearchAct ?
-            searchArray.length === 0 ? 
+            searchArray.length === 0 ?
               <div className="h-100">
 
                 <p className="text-center">not found</p>
               </div>
-             : 
-               searchArray?.map((item) => (
-              <Products key={item.id} data={item} />
-            ))
+              :
+              searchArray?.map((item) => (
+                <Products key={item.id} data={item} />
+              ))
             :
             products?.map((item) => (
               <Products key={item.id} data={item} />
             ))
-          
+
         }
       </div>
 
