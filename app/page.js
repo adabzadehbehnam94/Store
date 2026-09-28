@@ -5,7 +5,8 @@ import Products from "./component/Products";
 import { fetchdata } from "./functions/dataApi";
 import { SearchContext } from "./component/Header";
 import Redusersdata from "./component/Context";
-import styles from "@/app/page.module.css"
+import styles from "@/styles/page.module.css"
+import { useRouter } from "next/navigation";
 
 
 
@@ -23,6 +24,7 @@ export default function Home() {
 
   const { SearchAct } = useContext(Redusersdata)
   const [products, setProducts] = useState(null)
+  const router = useRouter()
   const searchArray = products?.filter((item) => {
     const title = item.title.split("")
     const title1 = title[0].toLowerCase()
@@ -34,7 +36,7 @@ export default function Home() {
       <div className={styles.HomePageTitle}>
         <h1>Shop the Latest</h1>
         <h3>Trendy New Arrivals</h3>
-        <button className={styles.buttonShop}>Shop Now</button>
+        <button onClick={()=> router.push("/allProducts")} className={styles.buttonShop}>Shop Now</button>
       </div>
       <div className="row mt-4">
         {
@@ -49,7 +51,7 @@ export default function Home() {
                 <Products key={item.id} data={item} />
               ))
             :
-            products?.map((item) => (
+            products?.slice(0,4).map((item) => (
               <Products key={item.id} data={item} />
             ))
 

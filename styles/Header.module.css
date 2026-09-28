@@ -64,7 +64,7 @@
     background-color: #f0eeed;
     width: 160px;
     font-size: 18px;
-    background-image: url(../../public/icons/icons8-magnifier-30.png);
+    background-image: url(../public/icons/icons8-magnifier-30.png);
     background-repeat: no-repeat;
     background-position: top 10px right 15px;
     transition: all 1s;
@@ -78,7 +78,7 @@
 
 .searchMobileIcon{
     border: none;
-    background: url(../../public/icons/icons8-magnifier-30.png) no-repeat center top 5px;
+    background: url(../public/icons/icons8-magnifier-30.png) no-repeat center top 5px;
     background-size: 23px;
     width: 30px;
     height: 30px;

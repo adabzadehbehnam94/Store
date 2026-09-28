@@ -1,7 +1,7 @@
 'use client'
 
 import Link from "next/link"
-import style from "./Header.module.css"
+import style from "@/styles/Header.module.css"
 import "bootstrap-icons/icons/justify.svg"
 import { useContext, useActionState, useState } from "react"
 import Redusersdata from "./Context"

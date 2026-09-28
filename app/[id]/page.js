@@ -1,6 +1,6 @@
 "use client"
 import Image from "next/image"
-import style from "./id.module.css"
+import style from "@/styles/id.module.css"
 import { faFontAwesome, faStar } from "@fortawesome/free-regular-svg-icons"
 import { isinCart, quantity, showQuantity } from "../functions/isproduct"
 import { useContext, useEffect, useState } from "react"

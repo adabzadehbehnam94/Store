@@ -1,6 +1,6 @@
 "use client"
 import Link from "next/link";
-import style from "./Footer.module.css"
+import style from "@/styles/Footer.module.css"
 export default function Footer (){
     return(
         <div className={style.backfooter}>
