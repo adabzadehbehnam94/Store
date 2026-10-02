@@ -37,13 +37,13 @@ const categories = (data) => {
 
 const brands = (data) => {
    const brandArray = []
-   
+
    data?.map((item) => {
 
-      if(item.brand !== undefined){
+      if (item.brand !== undefined) {
          brandArray.push(item.brand)
       }
-      
+
    })
 
    const removerDuplicate = new Set(brandArray)
@@ -53,17 +53,30 @@ const brands = (data) => {
    return newbrand
 }
 
-const categoriesLength =(data , cData )=>{
+const categoriesLength = (data, cData) => {
    const compare = data.filter(item => item.category === cData)
 
    return compare.length
 }
 
-const brandsLength =(data , cData )=>{
+const brandsLength = (data, cData) => {
    const compare = data.filter(item => item.brand === cData)
 
    return compare.length
 }
 
+const updateFilter = (name, value , searchParams , pathName , router) => {
+   const search = new URLSearchParams(searchParams)
+   if (value === "all") {
+      search.delete(name)
+   } else {
+      search.set(name, value)
+   }
 
-export { isinCart, quantity, shortTitle, showQuantity , categories , brands ,categoriesLength , brandsLength}
+   const queryString = search.toString()
+
+   router.push(queryString ? `${pathName}?${queryString}` : `${pathName}`)
+}
+
+
+export { isinCart, quantity, shortTitle, showQuantity, categories, brands, categoriesLength, brandsLength ,updateFilter }
