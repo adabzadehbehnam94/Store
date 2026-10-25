@@ -11,17 +11,11 @@ import { useContext } from "react"
 
 const Products = (props) => {
 
-
     const { id, images, title, price } = props.data
-
-    
-
-    const { state, dispatch } = useContext(Redusersdata)
-
 
     return (
 
-        <div className={`col-12 col-sm-6  col-lg-4 col-xl-3 ${styles.boxCol}`} key={id}>
+        <div className={`col-6 col-lg-4 col-xl-3 ${styles.boxCol}`} key={id}>
 
 
             <div className={styles.boxProduct}>

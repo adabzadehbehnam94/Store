@@ -1,4 +1,18 @@
-.sort{
+.sort {
     border: 2px solid #eee;
     border-radius: 10px;
+}
+
+
+/* responsive */
+
+@media screen and (max-width: 767px) and (min-width: 350px) {
+    .headerSort {
+        padding: 10px;
+    }
+
+    .headerSort img{
+        width: 30px;
+        height: auto;
+    }
 }

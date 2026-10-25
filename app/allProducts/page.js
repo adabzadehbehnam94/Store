@@ -42,10 +42,10 @@ export default async function AllProducts({searchParams}) {
             <HeaderProductPage />
             <div className="container">
                 <div className="row gap-5">
-                    <div className="col-3 px-3">
+                    <div className="col-12 col-lg-3 px-3">
                        <CategoryChanger data={result?.products} category={categoryData}/>
                     </div>
-                    <div className="col-8">
+                    <div className="col-12 col-lg-8">
                         <SortHistory productsCount={result?.products.length}/>
 
                         <div className="row">

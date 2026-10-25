@@ -248,7 +248,7 @@ a.secondary {
   margin-bottom: 80px;
 }
 
-.HomePageTitle{
+.HomePageTitle {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -257,22 +257,40 @@ a.secondary {
   /* margin-bottom: 10px; */
 }
 
-.HomePageTitle h1{
+.HomePageTitle h1 {
   font-size: 70px;
   font-weight: bold;
 }
 
-.HomePageTitle h3{
+.HomePageTitle h3 {
   font-size: 40px;
-  
+
 
 }
 
 
-/* responsive */
-@media screen and (max-width: 575px) and (min-width: 370px) {
-  .boxCol {
+
+
+@media screen and (max-width: 767px) and (min-width: 350px) {
+
+  /* .boxCol {
     width: 400px;
     margin: 0 auto;
+  } */
+
+  .HomePageTitle{
+    gap: 15px;
+  }
+
+  .HomePageTitle h1 {
+    font-size: 40px;
+  }
+
+  .HomePageTitle h3 {
+    font-size: 20px;
+  }
+
+  .buttonShop{
+    margin-bottom: 20px;
   }
 }
