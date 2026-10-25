@@ -22,8 +22,7 @@ const reduser = (state , action)=>{
         case "ADD_ITEM":
             if(!state.selectedItems.find((item)=> item.id === action.payload.id)){
                 state.selectedItems.push({
-                    ...action.payload,
-                    cuantity : 1
+                    ...action.payload
                 }
             )
      
@@ -47,15 +46,16 @@ const reduser = (state , action)=>{
                 ...sumItems(state.selectedItems)
             }
 
-        case "INCREASE" :
-            const hasProduct = state.selectedItems.findIndex((item)=> item.id === action.payload.id)
-            state.selectedItems[hasProduct].cuantity++
-            // console.log(hasProduct);
+        case "CHANGE_QUANTITY" :
+            const findProduct = state.selectedItems.findIndex((item)=> item.id === action.payload.id)
+            state.selectedItems[findProduct].cuantity = action.payload.quantity
             
             
             return{
                 ...state,
+                selectedItems : [...state.selectedItems],
                 ...sumItems(state.selectedItems)
+                
             }
 
         case "DECREASE" :
@@ -104,23 +104,11 @@ export const Context =({children})=>{
     const [user , setuser] = useState(null)
     const handleUser = (user)=> setuser(user)
     const logoutUser = ()=> setuser(null)
-    // useEffect(()=>{
-    //     const getData = async ()=>{
-    //         const data = await me()
-    //         if(data?.user){
-    //             setuser(data?.user)
-    //             console.log(data?.user);
-                
-    //         }else{
-    //             setuser(null)
-    //         }
-            
-    //     }
-    //     getData()
-    // },[])
+    const [SearchAct, setSearchAct] = useState('')
+   
     
     return(
-        <Redusersdata.Provider value={{state , dispatch ,user , handleUser ,logoutUser}}>
+        <Redusersdata.Provider value={{state , dispatch ,user , handleUser ,logoutUser , SearchAct , setSearchAct}}>
             {children}
         </Redusersdata.Provider>
     )

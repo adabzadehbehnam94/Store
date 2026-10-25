@@ -1,22 +1,63 @@
+"use client"
+
+import { useContext, useEffect, useState } from "react";
 import Products from "./component/Products";
 import { fetchdata } from "./functions/dataApi";
+import { SearchContext } from "./component/Header";
+import Redusersdata from "./component/Context";
+import styles from "@/styles/page.module.css"
+import { useRouter } from "next/navigation";
 
 
 
-export default async function Home() {
-  
-  const products = await fetchdata()
-    
+
+export default function Home() {
+
+  useEffect(() => {
+    const data = async () => {
+      const fetch = await fetchdata()
+      setProducts(fetch)
+    }
+
+    data()
+  }, [])
+
+  const { SearchAct } = useContext(Redusersdata)
+  const [products, setProducts] = useState(null)
+  const router = useRouter()
+  const searchArray = products?.filter((item) => {
+    const title = item.title.split("")
+    const title1 = title[0].toLowerCase()
+    const title2 = title1 + title[1]
+    return title1 === SearchAct | title2 === SearchAct | item.title === SearchAct
+  })
   return (
     <div className="container">
-        <div className="row mt-4">
-            {
-              products?.map((item)=>(
-                  <Products key={item.id}  data={item}/>
+      <div className={styles.HomePageTitle}>
+        <h1>Shop the Latest</h1>
+        <h3>Trendy New Arrivals</h3>
+        <button onClick={()=> router.push("/allProducts")} className={styles.buttonShop}>Shop Now</button>
+      </div>
+      <div className="row mt-4">
+        {
+          SearchAct ?
+            searchArray.length === 0 ?
+              <div className="h-100">
+
+                <p className="text-center">not found</p>
+              </div>
+              :
+              searchArray?.map((item) => (
+                <Products key={item.id} data={item} />
               ))
-            }
-        </div>
-      
+            :
+            products?.slice(0,4).map((item) => (
+              <Products key={item.id} data={item} />
+            ))
+
+        }
+      </div>
+
     </div>
   );
 }
