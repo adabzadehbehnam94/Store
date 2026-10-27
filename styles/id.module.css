@@ -1,15 +1,15 @@
-.rate{
-    display: inline-block;
-    padding: 10px;
-    color: #000;
-    font-size: 30px;
-    font-weight: 500;
+.rate {
+  display: inline-block;
+  padding: 10px;
+  color: #000;
+  font-size: 30px;
+  font-weight: 500;
 }
 
-.rate svg{
-    width: 20px;
-    height: 20px;
-    color: yellow;
+.rate svg {
+  width: 20px;
+  height: 20px;
+  color: yellow;
 }
 
 .buynumber {
@@ -24,44 +24,44 @@
   line-height: 11px;
 }
 
-.productTitle{
+.productTitle {
   font-size: 50px;
 }
 
-.description{
+.description {
   margin-top: 10px;
   font-size: 25px;
   font-weight: 400;
 }
 
-.imageProduct{
+.imageProduct {
   background-color: #f5f6f5;
   border-radius: 20px;
 }
 
 
-.count{
-  display: block; 
+.count {
+  display: block;
   width: 102px;
   height: 53px;
-  border : 2px solid #d9d9d8;
+  border: 2px solid #d9d9d8;
   border-radius: 5px;
   color: #000;
   padding: 0 20px;
   margin-bottom: 28px;
 }
 
-.addCart{
-    width: 386px;
-    height: 99px;
-    background-color: #d43a00;
-    border-radius: 20px;
-    border: none;
-    color: #fff;
-    font-weight: bold;
-    font-size: 35px;
-    text-shadow: 1px 1px 2px #000;
-    margin-bottom: 80px;
+.addCart {
+  width: 386px;
+  height: 99px;
+  background-color: #d43a00;
+  border-radius: 20px;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: 35px;
+  text-shadow: 1px 1px 2px #000;
+  margin-bottom: 80px;
 }
 
 .relatedProducts {
@@ -70,27 +70,34 @@
 
 }
 
-.relatedProducts img{
+.relatedProducts img {
   background-color: #f7f7f5;
   border-radius: 20px;
   margin-bottom: 33px;
 }
 
-.relatedProducts h3{
-  font-weight: bold
-}
 
-.relatedProducts p{
+.relatedProducts p {
   font-size: 25px;
   font-weight: 500
 }
 
 /* responsive */
 
-@media (min-width: 344px) and (max-width: 500px) { 
-  .imageProduct{
+
+
+@media screen and (max-width: 767px) and (min-width: 350px) {
+  .addCart {
     width: 100%;
-    height: auto;
   }
 
- }
+  .productTitle{
+    margin-top: 15px;
+    font-size: 30px;
+  }
+
+  .description{
+    font-size: 20px;
+  }
+
+}

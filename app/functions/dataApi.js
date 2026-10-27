@@ -1,5 +1,5 @@
     const fetchdata = async ()=>{
-      const result = await fetch("https://dummyjson.com/products",{
+      const result = await fetch("https://dummyjson.com/products?sortBy=id&order=desc",{
         cache:"no-store"
       })
       

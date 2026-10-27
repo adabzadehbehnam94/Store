@@ -4,8 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import styles from "@/styles/page.module.css"
 import { shortTitle } from '../functions/isproduct';
-import Redusersdata from "../component/Context"
-import { useContext } from "react"
+
 
 
 

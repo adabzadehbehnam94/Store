@@ -104,10 +104,12 @@ export default function Header() {
                         <h5 className="offcanvas-title" id="offcanvasExampleLabel">Store</h5>
                         <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
-                    {/* <div className={`offcanvas-body ${style.menuBody}`}>
-                        <Link href={"/login"}>login</Link>
-                        <Link href={"/register"}>register</Link>
-                    </div> */}
+                    <div className={`offcanvas-body ${style.menuBody}`}>
+                        <button className={style.MobileMenuLink} type="button" onClick={()=> router.push("/")}  data-bs-dismiss="offcanvas" aria-label="Close">home</button>
+                        <button className={style.MobileMenuLink} type="button" onClick={()=> router.push("/allProducts")}  data-bs-dismiss="offcanvas" aria-label="Close">allProducts</button>
+                        <button className={style.MobileMenuLink} type="button" onClick={()=> router.push("/about")}  data-bs-dismiss="offcanvas" aria-label="Close">aboutUs</button>
+                        <button className={style.MobileMenuLink} type="button" onClick={()=> router.push("/contact")}  data-bs-dismiss="offcanvas" aria-label="Close">contactUs</button>
+                    </div>
                 </div>
             </div>
     )

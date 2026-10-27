@@ -3,6 +3,7 @@
 import { usePathname, useRouter, useSearchParams } from "next/navigation"
 import { updateFilter } from "../functions/isproduct"
 import { useState } from "react"
+import styles from "@/styles/products.module.css"
 
 
 export default function CategoryChanger({ data, category }) {
@@ -15,10 +16,12 @@ export default function CategoryChanger({ data, category }) {
         setSelectedCategory(value)
     }
 
+    
+
 
     return (
         <>
-            <div>
+            <div className={`${styles.categories} d-none d-lg-block`}>
                 <h3>categories</h3>
                 <div className="d-flex justify-content-between">
                     <div className="d-flex gap-2 align-items-center allover">
@@ -29,7 +32,7 @@ export default function CategoryChanger({ data, category }) {
                 </div>
                 {category?.map((item => (
 
-                    // categoriesLength(data , item) !== 0 &&
+                    
                     <div className="d-flex justify-content-between" key={item}>
                         <div className="d-flex gap-2 align-items-center">
                             <input type="checkbox"
@@ -39,29 +42,19 @@ export default function CategoryChanger({ data, category }) {
                             />
                             <p className="ml-2">{item}</p>
                         </div>
-                        {/* <p>{categoriesLength(data , item)}</p> */}
+                        
                     </div>
                 )))}
             </div>
 
-            <div>
-                <h3>Brands</h3>
-                <div className="d-flex justify-content-between">
-                    <div className="d-flex gap-2 align-items-center">
-                        <input type="checkbox" value={"allproducts"} />
-                        <p className="ml-2">All Brands</p>
-                    </div>
-                    <p>{data.length}</p>
-                </div>
-                {/* {brands(Data).map((item => (
-                                <div className="d-flex justify-content-between" key={item}>
-                                    <div className="d-flex gap-2 align-items-center">
-                                        <input type="checkbox" value={item} />
-                                        <p className="ml-2">{item}</p>
-                                    </div>
-                                    <p>{brandsLength(Data, item)}</p>
-                                </div>
-                            )))} */}
+            <div className={`${styles.mobileCategory} d-block d-lg-none`}>
+                <h3>categories</h3>
+                <select onChange={(item) => updateFilter("category", item.target.value, searchParams, pathName, router)}>
+                    <option value="all" key="all">allCategories</option>
+                    {category.map((item)=>(
+                        <option value={item} key={item}>{item}</option>
+                    ))}
+                </select>
             </div>
         </>
     )

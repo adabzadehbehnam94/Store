@@ -1,17 +1,17 @@
-.product{
+.product {
     border-top: 2px solid #deddde;
     padding: 15px 20px;
     margin-bottom: 15px;
 }
 
 
-.details{
-    
-    color: #000;     
+.details {
+
+    color: #000;
     font-size: 16px;
 }
 
-.removeIcon{
+.removeIcon {
     border: none;
     color: #0000ff;
     font-size: 20px;
@@ -19,11 +19,11 @@
     margin-right: 10px;
 }
 
-.success{
+.success {
     margin-left: 0 !important;
 }
 
-.number{
+.number {
     background-color: #c70404;
     border-radius: 50%;
     color: #fff;
@@ -33,31 +33,31 @@
     text-align: center;
 }
 
-.path{
+.path {
     margin: 44px 0 72px 0;
 }
 
-.textShoping{
+.textShoping {
     width: 500px;
     margin: 0 auto 50px auto;
     font-size: 70px;
     font-weight: 600;
 }
 
-.imageProduct{
+.imageProduct {
     background-color: #f5f4f2;
     border-radius: 20px;
 }
 
-.titleProduct{
+.titleProduct {
     font-size: 23px;
     font-weight: 600;
     text-align: end;
 }
 
-.proceedBtn{
+.proceedBtn {
     width: 100%;
-    height:90px ;
+    height: 90px;
     border: none;
     background-color: #d73f00;
     color: #fff;
@@ -66,31 +66,86 @@
     transition: all .5s;
 }
 
-.proceedBtn:hover{
+.proceedBtn:hover {
     background-color: #b74000;
 }
 
-.relatedProducts{
+.relatedProducts {
     text-decoration: none;
     color: #000;
     margin-bottom: 20px;
 }
 
 
-.relatedProducts div{
+.relatedProducts div {
     background-color: #f1f1f1;
     border-radius: 20px;
     margin-bottom: 10px;
 }
 
-.relatedProducts img{
+.relatedProducts img {
     width: 100%;
     height: 100%;
 }
 
-@media (max-width: 400px) { 
-    .imageProduct{
+.countity{
+    border: 2px solid #eee;
+    border-radius: 10px;
+    padding: 8px;
+    
+}
+
+/* responsive //////////// */
+
+/* @media (max-width: 400px) {
+    .imageProduct {
         width: 200px;
         height: 100px;
     }
- }
+} */
+
+@media (max-width: 575px) {
+    .textShoping {
+        width: 100%;
+        margin: 0 auto 50px auto;
+        font-size: 50px;
+        font-weight: 600;
+    }
+
+}
+
+@media screen and (max-width: 767px) and (min-width: 350px){
+
+    .product {
+        border: none;
+    }
+    
+    .allItem {
+        border-top: 2px solid #deddde;
+        margin: 0 5px;
+    }
+    
+    .product h3 {
+        font-size: 20px;
+    }
+    
+    
+    .detailsItem {
+        margin-top: 5px;
+        justify-content: space-between !important;
+        align-items: center !important;
+    }
+
+
+    .imageProduct{
+        width: 100px;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 1199px) and (min-width: 992px){
+    .imageProduct{
+        width: 100px ;
+        height: auto;
+    }
+}

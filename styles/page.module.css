@@ -178,10 +178,6 @@ a.secondary {
   border-radius: 15px;
 }
 
-.boxProduct:hover {
-  box-shadow: 1px 0px 10px 0px #000;
-
-}
 
 .boxProduct img {
   border-radius: 10px;
@@ -273,11 +269,7 @@ a.secondary {
 
 @media screen and (max-width: 767px) and (min-width: 350px) {
 
-  /* .boxCol {
-    width: 400px;
-    margin: 0 auto;
-  } */
-
+ 
   .HomePageTitle{
     gap: 15px;
   }

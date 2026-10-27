@@ -2,16 +2,12 @@
 import { useContext, useEffect, useState } from "react"
 import Redusersdata from "../component/Context"
 import Image from "next/image"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faMinusSquare, faTrashAlt } from "@fortawesome/free-regular-svg-icons"
 import Link from "next/link"
 import style from "@/styles/shopingcart.module.css"
 import { usePathname, useRouter } from "next/navigation"
 import { fetchdata } from "../functions/dataApi"
 import close from "@/public/icons/icons8-close-24.png"
-import { quantity } from "../functions/isproduct"
 import NotProduct from "../component/notProduct"
-// import { useRouter } from "next/router"
 
 
 const checkproduct = (state) => {
@@ -43,24 +39,7 @@ export default function ShopingCart() {
         return numbers
     }
 
-    // ChatGPT method
-
-    // const RelatedProdaucts2 = (pro , car) => {
-    //     const cartId = car.map(item => item.id)
-    //     console.log(cartId);
-
-    //     const related = pro.filter(item => 
-    //         car.some(cartItem => 
-    //             cartItem.category === item.category && !cartId.includes(item.id)
-    //          )
-    //     )
-
-
-    //     return [...new Map(related.map(item => [item.id , item])).values()]
-
-    // }
-
-    // my method ///////////////////////////////////////////
+    
     const RelatedProdaucts = (pro, car) => {
         const cartId = car.map(item => item.id)
         const product = pro.filter(item =>
@@ -70,8 +49,6 @@ export default function ShopingCart() {
         return product
 
     }
-
-    /////////////////////////////////////////////////////        
 
     useEffect(() => {
         const fetchProduct = async () => {
@@ -92,18 +69,18 @@ export default function ShopingCart() {
                 <div className="col-12  col-lg-8 pr-4 order-end order-lg-first mt-3 mt-lg-0">
 
                     {Data.map((item) => (
-                        <div className="row align-items-center justify-content-end" key={item.id}>
+                        <div className={`row align-items-center justify-content-end ${style.allItem}`} key={item.id}>
                             <div className={`row d-none d-md-flex  justify-content-end ${style.titleProduct}`}>
                                 <div className="col-6 ps-5 text-start" >Product</div>
                                 <div className="col-2">Price</div>
                                 <div className="col-2">Quantity</div>
                                 <div className="col-2">Total</div>
                             </div>
-                            <div className="col-1 ">
+                            <div className="col-md-1 col-2 ">
                                 <button className={style.removeIcon} ><Image onClick={() => dispatch({ type: "REMOVE_ITEM", payload: item })} alt="close" src={close} width={24} height={24} /></button>
                             </div>
 
-                            <div className={`col-11 d-flex align-items-center justify-content-between px-0 ${style.product}`} key={item.id}>
+                            <div className={`col-md-11 col-10 d-flex align-items-center justify-content-between px-0 ${style.product}`} key={item.id}>
                                 <div className="row align-items-center w-100">
 
                                     <div className="col-md-7 col-12 d-flex align-items-center">
@@ -113,11 +90,11 @@ export default function ShopingCart() {
                                     </div>
 
 
-                                    <div className="col-md-5 col-12 d-flex justify-content-start justify-content-md-between ">
+                                    <div className={`col-md-5 col-12 d-flex justify-content-between align-items-center  ${style.detailsItem}`}>
                                         <h4 className={style.details}>{item.price} $</h4>
 
 
-                                        <select  defaultValue={item.cuantity} onChange={(e) => dispatch({ type: "CHANGE_QUANTITY", payload: { ...item, quantity: Number(e.target.value) } })} >
+                                        <select className={style.countity} defaultValue={item.cuantity} onChange={(e) => dispatch({ type: "CHANGE_QUANTITY", payload: { ...item, quantity: Number(e.target.value) } })} >
 
                                             {
                                                 itemStock(item.stock).map(number => (
@@ -128,7 +105,7 @@ export default function ShopingCart() {
                                         </select>
 
 
-                                        <p className="d-inline text-align-end">{totalProduct(item.cuantity , item.price).toFixed(2)}</p>
+                                        <p className="d-inline text-align-end m-0">{totalProduct(item.cuantity , item.price).toFixed(2)}</p>
                                     </div>
                                 </div>
 
@@ -160,7 +137,7 @@ export default function ShopingCart() {
                                 <p>{price} $</p>
                             </div>
 
-                            <button className={style.proceedBtn} onClick={() => router.push("/")}>proceed to checkout</button>
+                            <button className={style.proceedBtn} onClick={() => dispatch({type : "CHECKOUT"})}>proceed to checkout</button>
 
                         </>
 
@@ -172,7 +149,7 @@ export default function ShopingCart() {
                         {
                             products &&
                             RelatedProdaucts(products, Data).slice(0, 4).map(item => (
-                                <Link href={`/${item.id}`} className={`col-lg-3 col-sm-6 col-md-4 col-12  ${style.relatedProducts}`} key={`${item.id}`}>
+                                <Link href={`/${item.id}`} className={`col-lg-3 col-sm-6 col-md-4 col-6  ${style.relatedProducts}`} key={`${item.id}`}>
                                     <div>
                                         <Image alt={item.title} src={item.images[0]} width={250} height={236} />
                                     </div>

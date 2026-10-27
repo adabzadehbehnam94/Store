@@ -1,13 +1,9 @@
 "use client"
 import Image from "next/image"
 import style from "@/styles/id.module.css"
-import { faFontAwesome, faStar } from "@fortawesome/free-regular-svg-icons"
-import { isinCart, quantity, showQuantity } from "../functions/isproduct"
 import { useContext, useEffect, useState } from "react"
 import Redusersdata from "../component/Context"
-import { useParams, usePathname } from "next/navigation"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrashAlt, faSquareMinus, faSquarePlus } from '@fortawesome/free-regular-svg-icons';
+import { useParams } from "next/navigation"
 import { fetchdata } from "../functions/dataApi"
 import Link from "next/link"
 
@@ -106,7 +102,7 @@ export default function Product() {
                                 <h1 className="mb-4">Related Products</h1>
                                 {
                                     relatedProducts?.slice(0, 3).map(item => (
-                                        <div className="col-12 col-sm-6 col-md-4 col-lg-3" key={item.id}>
+                                        <div className="col-6 col-sm-6 col-md-4 col-lg-3" key={item.id}>
                                             <Link href={`/${item.id}`} className={style.relatedProducts}>
                                                 <Image className="w-100 h-auto" alt={item.title} src={item.images[0]} width={250} height={236} />
                                                 <h3 className="mb-2">{item.title}</h3>

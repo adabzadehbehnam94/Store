@@ -1,7 +1,17 @@
 .sort {
     border: 2px solid #eee;
     border-radius: 10px;
+    padding: 8px;
+    margin-bottom: 5px;
 }
+
+
+.mobileCategory select{
+    border: 2px solid #eee;
+    border-radius: 10px;
+    padding: 8px;
+}
+
 
 
 /* responsive */
@@ -11,8 +21,9 @@
         padding: 10px;
     }
 
-    .headerSort img{
+    .headerSort img {
         width: 30px;
         height: auto;
     }
+
 }
